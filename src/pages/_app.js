@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>RadarSoft</title>
+        <title>RadarSoft Technologies</title>
         <meta name="description" content="RadarSoft Technology" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
