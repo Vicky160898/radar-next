@@ -22,6 +22,10 @@ import workLogo from "../../public/assets/img/work-logo.png";
 import user_pic1 from "../../public/assets/img/user_pic1.png";
 import workLogo2 from "../../public/assets/img/work-logo2.png";
 import workLogo3 from "../../public/assets/img/work-logo3.png";
+import quality from "../../public/assets/gif/quality.gif";
+import digitalTransformation from "../../public/assets/img/digitalTransformation.png";
+import staff from "../../public/assets/img/staff.png";
+
 import Link from "next/link";
 import { useState } from "react";
 
@@ -38,6 +42,9 @@ export default function Home() {
           break;
         case 3:
           setBackgroundClass("unique-area-3");
+          break;
+        case 4:
+          setBackgroundClass("unique-area-4");
           break;
         default:
           setBackgroundClass("unique-area-1");
@@ -56,41 +63,39 @@ export default function Home() {
       </Head>
       <main className={`main`}>
         {/* <!--banner area started--> */}
-        <section class="banner-area">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="banner-left-side-area">
-                  <h1 class="banner-heading">
+        <section className="banner-area">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="banner-left-side-area">
+                  <h1 className="banner-heading">
                     Crafting Digital Dreams Design, Develop, Deliver
                   </h1>
-                  <p class="banner-paragraph">
-                    All the Lorem Ipsum generators on the Internet tend to
-                    repeat predefined chunks as necessary, making this the first
-                    true generator on the Internet. It uses a dictionary of over
-                    200 Latin words, combined with a handful of model sentence
-                    structures, to generate Lorem Ipsum which looks reasonable.
-                    Handful of model sentence structures, to generate Lorem
-                    Ipsum which looks reasonable. The generated Lorem Ipsum is
-                    therefore always free.
+                  <p className="banner-paragraph">
+                    At RadarSoft Technologies, we bring your digital dreams to life with
+                    our all-inclusive solutions. Our team excels in creating innovative
+                    designs, developing seamless applications, and delivering projects on
+                    time. With a blend of creativity and advanced technology, we ensure
+                    your vision becomes a reality. Let us help you stand out in the digital
+                    landscape with our expert services.
                   </p>
-                  <button class="banner-button">Contact us</button>
+                  <button className="banner-button">Contact us</button>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="banner-right-side-area">
-                  <div class="banner-right-side-box">
-                    <h3 class="banner-right-side-h3">Book an Appointment</h3>
+              <div className="col-lg-6">
+                <div className="banner-right-side-area">
+                  <div className="banner-right-side-box">
+                    <h3 className="banner-right-side-h3">Book an Appointment</h3>
                     <form>
                       <input type="text" placeholder="Full Name*" required />
                       <input type="text" placeholder="Email Id*" required />
                       <input type="number" placeholder="Phone No*" required />
-                      <button class="banner-right-side-button">
+                      <button className="banner-right-side-button">
                         Enquire Now
                       </button>
                     </form>
-                    <p class="banner-right-side-paragraph">
-                      ⚡ Available for 24 Hours⚡
+                    <p className="banner-right-side-paragraph">
+                      ⚡Available from Mon - Fri 10AM TO 7PM ⚡
                     </p>
                   </div>
                 </div>
@@ -101,14 +106,14 @@ export default function Home() {
         {/* <!--banner area finished--> */}
 
         {/* <!--logo promtion --> */}
-        <section class="logo-promtion">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <h1 class="logo-promotion-heading">
+        <section className="logo-promtion">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <h1 className="logo-promotion-heading">
                   Companies we have worked with
                 </h1>
-                <div class="logo-promotion-images">
+                <div className="logo-promotion-images">
                   <Image src={fill} alt="" />
                   <Image src={merkle} alt="" />
                   <Image src={sliceBlack} alt="" />
@@ -123,23 +128,21 @@ export default function Home() {
         {/* <!--logo promtion finished--> */}
 
         {/* <!--unique area--> */}
-        <section class={`unique-area col-md-12 ${backgroundClass}`}>
-          <div class="container">
-            <div class="row">
-              <div class="unique-area-label">
+        <section className={`unique-area col-md-12 ${backgroundClass}`}>
+          <div className="container">
+            <div className="row">
+              <div className="unique-area-label">
                 <h1
-                  class={`unique-area-heading col-lg-8 col-12 m-0 ${
-                    activeAccordion === 3 && "text-style"
-                  }`}
-                >
-                  Radarsoft’s RD&D <br />
-                  process that makes us unique
-                </h1>
-                <div class="col-lg-4 mt-lg-0 mt-4 col-12">
-                  <button
-                    class={`${
-                      activeAccordion === 3 ? "btn-style" : "unique-area-button"
+                  className={`unique-area-heading col-lg-8 col-12 m-0 ${activeAccordion === 3 && "text-style"
                     }`}
+                >
+                  Discover how we work at<br />
+                  RadarSoft Technologies
+                </h1>
+                <div className="col-lg-4 mt-lg-0 mt-4 col-12">
+                  <button
+                    className={`${activeAccordion === 3 || activeAccordion === 4 ? "btn-style" : "unique-area-button"
+                      }`}
                   >
                     Discover how we work
                   </button>
@@ -152,9 +155,9 @@ export default function Home() {
                     : {}
                 }
               />
-              <div class="unique-area-details">
-                <div class="row">
-                  <div class="unique-area-left-side col-lg-6 col-12 px-lg-5">
+              <div className="unique-area-details">
+                <div className="row">
+                  <div className="unique-area-left-side col-lg-6 col-12">
                     {activeAccordion === 1 && (
                       <Image
                         id="img-rapid-design"
@@ -179,16 +182,23 @@ export default function Home() {
                         alt="Continuous Iterations"
                       />
                     )}
+                    {activeAccordion === 4 && (
+                      <Image
+                        id="img-continuous-iterations"
+                        className="unique-area-img unique-area-img-1 img-fluid active"
+                        src={quality}
+                        alt="Continuous Iterations"
+                      />
+                    )}
                   </div>
                   <div
-                    class="unique-area-accordion accordion col-lg-6 col-12 px-lg-5"
+                    className="unique-area-accordion accordion col-lg-6 col-12"
                     id="accordionExample"
                   >
-                    <div class="accordion-item">
+                    <div className="accordion-item">
                       <h2
-                        class={`accordion-header ${
-                          activeAccordion === 3 && "border-style"
-                        }`}
+                        className={`accordion-header ${activeAccordion === 3 && "border-style"
+                          }`}
                         id="headingOne"
                       >
                         <button
@@ -196,9 +206,8 @@ export default function Home() {
                           data-bs-toggle="collapse"
                           data-bs-target="#collapseOne"
                           aria-controls="collapseOne"
-                          className={`accordion-button ${
-                            activeAccordion === 3 && "text-style"
-                          } ${activeAccordion === 1 ? "" : "collapsed"}`}
+                          className={`accordion-button ${activeAccordion === 3 && "text-style"
+                            } ${activeAccordion === 1 ? "" : "collapsed"}`}
                           onClick={() => handleAccordionClick(1)}
                           aria-expanded={activeAccordion === 1}
                         >
@@ -206,30 +215,25 @@ export default function Home() {
                         </button>
                       </h2>
                       <div
-                        className={`accordion-collapse collapse ${
-                          activeAccordion === 1 ? "show" : ""
-                        }`}
+                        className={`accordion-collapse collapse ${activeAccordion === 1 ? "show" : ""
+                          }`}
                         id="collapseOne"
                         // class="accordion-collapse collapse show"
                         aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample"
                       >
                         <div
-                          class={`accordion-body ${
-                            activeAccordion === 3 && "text-style"
-                          }`}
+                          className={`accordion-body ${activeAccordion === 3 && "text-style"
+                            }`}
                         >
-                          Sed et orci volutpat, pharetra nunc eu, ultrices urna.
-                          Etiam sed sapien vitae ipsum mollis condimentum a non
-                          dui. Praesent ut tellus et justo euismod euismod.
+                          Our Rapid Design phase focuses on quickly translating your vision into real world designs. We create user-centric designs that align perfectly with our client’s business goals.
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item">
+                    <div className="accordion-item">
                       <h2
-                        class={`accordion-header ${
-                          activeAccordion === 3 && "border-style"
-                        }`}
+                        className={`accordion-header ${activeAccordion === 3 && "border-style"
+                          }`}
                         id="headingTwo"
                       >
                         <button
@@ -247,38 +251,24 @@ export default function Home() {
                         </button>
                       </h2>
                       <div
-                        className={`accordion-collapse collapse ${
-                          activeAccordion === 2 ? "show" : ""
-                        }`}
+                        className={`accordion-collapse collapse ${activeAccordion === 2 ? "show" : ""
+                          }`}
                         id="collapseTwo"
                         aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample"
                       >
                         <div
-                          class={`accordion-body ${
-                            activeAccordion === 3 && "text-style"
-                          }`}
+                          className={`accordion-body ${activeAccordion === 3 && "text-style"
+                            }`}
                         >
-                          <strong>
-                            This is the second item's accordion body.
-                          </strong>
-                          It is hidden by default, until the collapse plugin
-                          adds the appropriate classes that we use to style each
-                          element. These classes control the overall appearance,
-                          as well as the showing and hiding via CSS transitions.
-                          You can modify any of this with custom CSS or
-                          overriding our default variables. It's also worth
-                          noting that just about any HTML can go within the{" "}
-                          <code>.accordion-body</code>, though the transition
-                          does limit overflow.
+                          In our Rapid Development stage, we leverage agile methodologies and advanced technologies to smoothly turn designs into functional products.
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item">
+                    <div className="accordion-item">
                       <h2
-                        class={`accordion-header ${
-                          activeAccordion === 3 && "border-style"
-                        }`}
+                        className={`accordion-header ${activeAccordion === 3 && "border-style"
+                          }`}
                         id="headingThree"
                       >
                         <button
@@ -296,31 +286,56 @@ export default function Home() {
                         </button>
                       </h2>
                       <div
-                        className={`accordion-collapse collapse ${
-                          activeAccordion === 3 ? "show" : ""
-                        }`}
+                        className={`accordion-collapse collapse ${activeAccordion === 3 ? "show" : ""
+                          }`}
                         id="collapseThree"
                         // class="accordion-collapse collapse"
                         aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample"
                       >
                         <div
-                          class={`accordion-body ${
-                            activeAccordion === 3 && "text-style"
-                          }`}
+                          className={`accordion-body ${activeAccordion === 3 && "text-style"
+                            }`}
                         >
-                          <strong>
-                            This is the third item's accordion body.
-                          </strong>
-                          It is hidden by default, until the collapse plugin
-                          adds the appropriate classes that we use to style each
-                          element. These classes control the overall appearance,
-                          as well as the showing and hiding via CSS transitions.
-                          You can modify any of this with custom CSS or
-                          overriding our default variables. It's also worth
-                          noting that just about any HTML can go within the{" "}
-                          <code>.accordion-body</code>, though the transition
-                          does limit overflow.
+                          We believe in constant improvement. Our Continuous Iterations approach involves regular feedback loops and incremental enhancements.
+                        </div>
+                      </div>
+                    </div>
+                    <div className="accordion-item">
+                      <h2
+                        className={`accordion-header ${activeAccordion === 3 && "border-style"
+                          }`}
+                        id="headingFour"
+                      >
+                        <button
+                          className={`accordion-button 
+                                ${activeAccordion === 3 && "text-style"}
+                            ${activeAccordion === 4 ? "" : "collapsed"}`}
+                          type="button"
+                          onClick={() => handleAccordionClick(4)}
+                          aria-expanded={activeAccordion === 4}
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFour"
+                          aria-controls="collapseFour"
+                        >
+                          Quality Assurance
+                        </button>
+                      </h2>
+                      <div
+                        className={`accordion-collapse collapse ${activeAccordion === 4 ? "show" : ""
+                          }`}
+                        id="collapseFour"
+                        aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div
+                          className={`accordion-body ${activeAccordion === 3 && "text-style"
+                            }`}
+                        >
+                          Quality is at the core of everything we do. Our strict Quality
+                          Assurance process involves comprehensive testing at every
+                          stage, guaranteeing a robust, bug-free solution that performs
+                          flawlessly in real-world scenarios.
                         </div>
                       </div>
                     </div>
@@ -333,39 +348,45 @@ export default function Home() {
         {/* <!--unique area finished--> */}
 
         {/* <!--our service area started--> */}
-        <section class="service-area col-md-12">
-          <div class="container">
-            <div class="row">
-              <div class="mb-md-5 mb-3">
-                <h1 class="service-area-upper-side-heading m-0">
+        <section className="service-area col-md-12">
+          <div className="container">
+            <div className="row">
+              <div className="mb-md-5 mb-3">
+                <h1 className="service-area-upper-side-heading m-0">
                   Our Services
                 </h1>
-                <p class="service-area-upper-side-paragraph mt-3 mb-0">
-                  Sed et orci volutpat, pharetra nunc eu, ultrices urna.
-                </p>
+                <span className="service-para">
+                  <p className="service-area-upper-side-paragraph mt-3 mb-0">
+                    Explore our comprehensive range of services designed to meet your unique business needs. From cutting-edge design and <br />
+                    development to effective digital marketing, we've got you covered.
+                  </p>
+                  <p className="service-area-upper-paragraph m-0">
+                    <u>View all</u>
+                  </p>
+                </span>
               </div>
-              <div class="col-lg-3 col-md-6 my-lg-0 my-3">
-                <div class="service-boxe-1">
-                  <Image class="service img-fluid" src={service1} alt="ewf" />
-                  <h6>IT Software Design</h6>
+              <div className="col-lg-3 col-md-6 my-lg-0 my-3">
+                <div className="service-boxe-1">
+                  <Image className="service img-fluid" src={digitalTransformation} alt="ewf" />
+                  <h6>Digital Transformation</h6>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 my-lg-0 my-3">
-                <div class="service-boxe-2">
-                  <Image class="service img-fluid" src={service2} alt="ewf" />
+              <div className="col-lg-3 col-md-6 my-lg-0 my-3">
+                <div className="service-boxe-2">
+                  <Image className="service img-fluid" src={staff} alt="ewf" />
+                  <h6>Staff Augmentation</h6>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 my-lg-0 my-3">
+                <div className="service-boxe-3">
+                  <Image className="service img-fluid" src={service3} alt="ewf" />
+                  <h6>UI/UX Design</h6>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 my-lg-0 my-3">
+                <div className="service-boxe-4">
+                  <Image className="service img-fluid" src={service1} alt="ewf" />
                   <h6>Mobile app development</h6>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 my-lg-0 my-3">
-                <div class="service-boxe-3">
-                  <Image class="service img-fluid" src={service3} alt="ewf" />
-                  <h6>Digital marketing</h6>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 my-lg-0 my-3">
-                <div class="service-boxe-4">
-                  <Image class="service img-fluid" src={service4} alt="ewf" />
-                  <h6>Brand strategy</h6>
                 </div>
               </div>
             </div>
@@ -374,56 +395,55 @@ export default function Home() {
         {/* <!--our service area closed--> */}
 
         {/* <!--our work area started--> */}
-        <section class="work-area col-md-12">
-          <div class="container">
-            <div class="row">
-              <div class="mb-md-5 mb-3">
-                <h1 class="work-area-upper-heading m-0">Our Work</h1>
-                <span class="work-para mt-3">
-                  <p class="work-area-upper-paragraph m-0">
-                    Case studies Sed et orci volutpat, pharetra nunc eu,
-                    ultrices urna.
+        <section className="work-area col-md-12">
+          <div className="container">
+            <div className="row">
+              <div className="mb-md-5 mb-3">
+                <h1 className="work-area-upper-heading m-0">Our Work</h1>
+                <span className="work-para mt-3">
+                  <p className="work-area-upper-paragraph m-0">
+                    Discover our successful projects and see how we've helped businesses to grow.
                   </p>
-                  <p class="work-area-upper-paragraph m-0">
+                  <p className="work-area-upper-paragraph m-0">
                     <u> Read our all case studies</u>
                   </p>
                 </span>
               </div>
 
-              <div class="work-area-lower-side">
-                <div class="work-lower-left col-md-6">
-                  <div class="work-area-logo">
-                    <Image class="work-logo" src={vector1} alt="1" />
-                    <Image class="work-logo" src={vector2} alt="2" />
+              <div className="work-area-lower-side">
+                <div className="work-lower-left col-md-6">
+                  <div className="work-area-logo">
+                    <Image className="work-logo" src={vector1} alt="1" />
+                    <Image className="work-logo" src={vector2} alt="2" />
                   </div>
-                  <h1 class="work-area-lower-heading">
-                    Hub for students & <br />
-                    professionals to learn new skills
+                  <h1 className="work-area-lower-heading">
+                    Abhyan is an Indian
+                    e-learning <br /> platform offering Courses in<br />
+                    Regional Languages
                   </h1>
-                  <p class="work-area-lower-paragraph">
-                    All the Lorem Ipsum generators on the Internet tend to
-                    repeat predefined chunks as necessary, making this the first
-                    true generator on the Internet. It uses a dictionary of over
-                    200 Latin words, combined with a handful of model sentence
-                    structures, to generate Lorem Ipsum which looks reasonable.
+                  <p className="work-area-lower-paragraph">
+                    We worked on Abhyan, bridging the gap between technology and <br />
+                    education. Our skill development courses provide essential job<br />
+                    skills to students, graduates, and professionals, helping them<br />
+                    advance in their careers.
                   </p>
-                  <div class="work-area-log">
-                    <button class="work-area-lower-button">
-                      Read full case study <i class="bi bi-arrow-right"></i>
+                  <div className="work-area-log">
+                    <button className="work-area-lower-button">
+                      Read full case study <i className="bi bi-arrow-right"></i>
                     </button>
-                    <Link class="work-area-lower-anchor" href="#">
+                    <Link className="work-area-lower-anchor" href="#">
                       Read our all case studies
                     </Link>
                   </div>
                 </div>
-                <div class="work-lower-right col-md-6">
+                <div className="work-lower-right col-md-6">
                   <Image
-                    class="work-picture-1 img-fluid"
+                    className="work-picture-1 img-fluid"
                     src={realmock8}
                     alt="3"
                   />
                   <Image
-                    class="work-picture-2 img-fluid"
+                    className="work-picture-2 img-fluid"
                     src={realmock9}
                     alt="3"
                   />
@@ -435,62 +455,57 @@ export default function Home() {
         {/* <!--our work area closed--> */}
 
         {/* <!--experience area started--> */}
-        <section class="experience-area col-md-12">
-          <div class="container">
-            <div class="row">
-              <div class="mb-md-5 mb-3">
-                <h1 class="experience-area-heading">
-                  Over 7+ years of hands-on experience, we bring a wealth of
-                  knowledge and expertise to every project.
+        <section className="experience-area col-md-12">
+          <div className="container">
+            <div className="row">
+              <div className="mb-md-5 mb-3">
+                <h1 className="experience-area-heading">
+                  Over 5+ years of hands-on experience, we bring a wealth of knowledge and expertise to every project.
                 </h1>
-                <p class="experience-area-paragraph m-0">
-                  All the Lorem Ipsum generators on the Internet tend to repeat
-                  predefined chunks as necessary, making this the first true
-                  generator on the Internet.
+                <p className="experience-area-paragraph mt-4">
+                  Our track record speaks for itself, delivering innovative solutions across diverse industries and technologies.
                 </p>
               </div>
             </div>
           </div>
-          <div class="experience-lower">
-            <div class="container">
-              <div class="row">
-                <div class="key-status col-lg-5 col-12">
-                  <h2 class="experience-low-left-heading">Key Stats</h2>
+          <div className="experience-lower">
+            <div className="container">
+              <div className="row">
+                <div className="key-status col-lg-5 col-12">
+                  <h2 className="experience-low-left-heading">Key Stats</h2>
                   <hr />
-                  <p class="experience-low-left-paragraph">
-                    Sed et orci volutpat, pharetra nunc eu, ultrices urna. Etiam
-                    sed sapien vitae ipsum mollis condimentum a non
-                    dui. Praesent ut tellus et justo euismod euismod.
+                  <p className="experience-low-left-paragraph">
+                    At Radarsoft, we pride ourselves on our extensive experience and proven results. Our team of skilled professionals has successfully delivered cutting-edge solutions to a wide range of clients across multiple sectors.
                   </p>
                 </div>
-                <div class="col-lg-7 col-12">
-                  <div class="exp-right-upper">
-                    <span class="exp-span">
-                      <h1 class="exp-low-heading">200+</h1>
-                      <p class="exp-low-para">Sed et orci volu</p>
+                <div className="col-lg-7 col-12">
+                  <div className="exp-right-upper">
+                    <span className="exp-span">
+                      <h1 className="exp-low-heading">100+</h1>
+                      <p className="exp-low-para">Satisfied Clients</p>
                     </span>
-                    <span class="exp-span">
-                      <h1 class="exp-low-heading">20+</h1>
-                      <p class="exp-low-para">Sed et orci volu</p>
+                    <span className="exp-span">
+                      <h1 className="exp-low-heading">20+</h1>
+                      <p className="exp-low-para">Industries Served</p>
                     </span>
                   </div>
-                  <hr class="exp-2" />
-                  <div class="exp-right-low">
-                    <span class="exp-span">
-                      <h1 class="exp-low-heading">36</h1>
-                      <p class="exp-low-para">Sed et orci volu</p>
+                  <hr className="exp-2" />
+                  <div className="exp-right-low">
+                    <span className="exp-span">
+                      <h1 className="exp-low-heading">25</h1>
+                      <p className="exp-low-para">Expert Team Members</p>
                     </span>
-                    <span class="exp-span">
-                      <h1 class="exp-low-heading">120</h1>
-                      <p class="exp-low-para">Sed et orci volu</p>
+                    <span className="exp-span">
+                      <h1 className="exp-low-heading">120</h1>
+                      <p className="exp-low-para">Projects Completed</p>
                     </span>
-                    <span class="exp-span">
-                      <h1 class="exp-low-heading">6+</h1>
-                      <p class="exp-low-para">Sed et orci volu</p>
+                    <span className="exp-span">
+                      <h1 className="exp-low-heading">5+</h1>
+                      <p className="exp-low-para">Years of Excellence</p>
                     </span>
-                    <span class="exp-span">
-                      <h1 class="exp-low-heading">3k</h1>
-                      <p class="exp-low-para">Sed et orci volu</p>
+                    <span className="exp-span">
+                      <h1 className="exp-low-heading">3k+</h1>
+                      <p className="exp-low-para">Lines of code commits per month</p>
                     </span>
                   </div>
                 </div>
@@ -501,42 +516,35 @@ export default function Home() {
         {/* <!--experience area closed--> */}
 
         {/* <!--about us started--> */}
-        <section class="about-us-area col-md-12">
-          <div class="container">
-            <div class="row justify-content-between">
-              <div class="about-us-left-side col-lg-5 col-12">
-                <h1 class="about-us-left-heading">About Us</h1>
-                <p class="about-us-left-paragraph m-0">
-                  Sed et orci volutpat, pharetra nunc eu, ultrices urna. Etiam
-                  sed sapien vitae ipsum mollis condimentum a non dui. Praesent
-                  ut tellus et justo euismod euismod. <br />
-                  <br />
-                  pharetra nunc eu, ultrices urna. Etiam sed sapien vitae ipsum
-                  mollis condimentum a non dui. Praesent ut tellus et justo
-                  euismod euismod. <br />
-                  Etiam sed sapien vitae ipsum mollis condimentum a non
-                  dui. Praesent ut tellus et jusf. Etiam sed sapien vitae ipsum
-                  mollis condimentum a non dui. Praesent ut tellus
+        <section className="about-us-area col-md-12">
+          <div className="container">
+            <div className="row justify-content-between">
+              <div className="about-us-left-side col-lg-5 col-12">
+                <h1 className="about-us-left-heading">About Us</h1>
+                <p className="about-us-left-paragraph m-0">
+                  At Radarsoft Technologies, we are passionate about transforming digital visions into reality. With over 5 years of industry experience, our team of dedicated professionals specializes in delivering cutting-edge IT solutions tailored to meet the unique needs of businesses across diverse sectors.<br /><br />
+                  We pride ourselves on our innovative unique process, which combines rapid design and development with rigorous quality assurance to ensure superior results.
+                  At Radarsoft, we don't just build software; we craft digital experiences that propel businesses forward in the digital age.
                 </p>
-                <button class="about-us-left-button">
-                  View in detail <i class="bi bi-arrow-right"></i>
+                <button className="about-us-left-button">
+                  View in detail <i className="bi bi-arrow-right"></i>
                 </button>
               </div>
-              <div class="about-us-right-side col-lg-6 col-12">
+              <div className="about-us-right-side col-lg-6 col-12">
                 <Image
-                  class="about-image img-fluid"
+                  className="about-image img-fluid"
                   src={rectangle54}
                   alt="frr"
                 />
-                <div class="about-box">
-                  <span class="mb-4">
+                <div className="about-box">
+                  <span className="mb-4">
                     <h6>Join our team</h6>
-                    <p class="about-box-paragraph m-0">
-                      Etiam sed sapien vitae ipsum mollis
+                    <p className="about-box-paragraph m-0">
+                      If you want to grow and get better.
                     </p>
                   </span>
-                  <div class="text-end about-box-button">
-                    <button type="button" class="btn btn-primary">
+                  <div className="text-end about-box-button">
+                    <button type="button" className="btn btn-primary">
                       Apply now
                     </button>
                   </div>
@@ -548,27 +556,22 @@ export default function Home() {
         {/* <!--about us closed--> */}
 
         {/* <!--stats area started--> */}
-        <section class="stats-area col-md-12">
-          <div class="container">
-            <div class="row">
-              <div class="text-center mb-lg-5 mb-0">
-                <h1 class="stats-area-heading">Our Work Stats</h1>
-                <p class="stats-area-paragraph">
-                  Pharetra nunc eu, ultrices urna. Etiam sed sapien vitae ipsum
-                  mollis condimentum a non dui. Praesent ut tellus et justo
-                  euismod euismod. Etiam sed sapien vitae ipsum mollis
-                  condimentum a non dui. Praesent ut tellus et jusf. Etiam sed
-                  sapien vitae ipsum mollis condimentum a non dui. Praesent ut
-                  tellus
+        <section className="stats-area col-md-12">
+          <div className="container">
+            <div className="row">
+              <div className="text-center mb-lg-5 mb-0">
+                <h1 className="stats-area-heading">Our Work Stats</h1>
+                <p className="stats-area-paragraph">
+                  At Radarsoft, we take pride in our diverse portfolio of successful projects across various industries. Each case study represents our commitment to delivering tailored, high-quality solutions that drive real business value. From startups to enterprise-level organizations, we've helped our clients overcome challenges, streamline operations, and achieve digital transformation.
                 </p>
               </div>
 
-              <div class="stats-images">
-                <div class="row">
-                  <div class="col-lg-4 col-12 my-lg-0 my-3">
-                    <div class="worklife-express">
-                      <div class="work-logo">
-                        <Image class="img-fluid" src={workLogo} />
+              <div className="stats-images">
+                <div className="row">
+                  <div className="col-lg-4 col-12 my-lg-0 my-3">
+                    <div className="worklife-express">
+                      <div className="work-logo">
+                        <Image className="img-fluid" src={workLogo} />
                       </div>
                       <p>
                         Working with RadarSoft was great! Their professionalism
@@ -576,19 +579,19 @@ export default function Home() {
                         our expectations. Highly recommended!
                       </p>
                       <user>
-                        <Image class="img-fluid" src={user_pic1} />
+                        <Image className="img-fluid" src={user_pic1} />
                         <span>
                           <h6>Tim David</h6>
-                          <p>Vice President Abhyan</p>
+                          <p style={{ fontSize: "14px" }}>Vice President Abhyan</p>
                         </span>
                       </user>
                     </div>
                   </div>
 
-                  <div class="col-lg-4 col-12 my-lg-0 my-3">
-                    <div class="worklife-express">
-                      <div class="work-logo">
-                        <Image class="img-fluid" src={workLogo2} />
+                  <div className="col-lg-4 col-12 my-lg-0 my-3">
+                    <div className="worklife-express" style={{ background: "#002758" }}>
+                      <div className="work-logo">
+                        <Image className="img-fluid" src={workLogo2} />
                       </div>
                       <p>
                         Working with RadarSoft was great! Their professionalism
@@ -596,19 +599,19 @@ export default function Home() {
                         our expectations. Highly recommended!
                       </p>
                       <user>
-                        <Image class="img-fluid" src={user_pic1} />
+                        <Image className="img-fluid" src={user_pic1} />
                         <span>
                           <h6>Tim David</h6>
-                          <p>Vice President Abhyan</p>
+                          <p style={{ fontSize: "14px" }}>Vice President Abhyan</p>
                         </span>
                       </user>
                     </div>
                   </div>
 
-                  <div class="col-lg-4 col-12 my-lg-0 my-3">
-                    <div class="worklife-express">
-                      <div class="work-logo">
-                        <Image class="img-fluid" src={workLogo3} />
+                  <div className="col-lg-4 col-12 my-lg-0 my-3">
+                    <div className="worklife-express" style={{ background: "#FFFFFF", color: "#000000" }}>
+                      <div className="work-logo">
+                        <Image className="img-fluid" src={workLogo3} />
                       </div>
                       <p>
                         Working with RadarSoft was great! Their professionalism
@@ -616,10 +619,10 @@ export default function Home() {
                         our expectations. Highly recommended!
                       </p>
                       <user>
-                        <Image class="img-fluid" src={user_pic1} />
+                        <Image className="img-fluid" src={user_pic1} />
                         <span>
                           <h6>Tim David</h6>
-                          <p>Vice President Abhyan</p>
+                          <p style={{ fontSize: "14px" }}>Vice President Abhyan</p>
                         </span>
                       </user>
                     </div>
